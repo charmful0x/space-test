@@ -25,6 +25,7 @@ render(app, {
 });
 
 router.get("/", async (ctx) => {
+  console.log("HOST", ctx.host)
   const label = ctx.host.split(".")[0];
   console.log(label);
   const user_profile = await getProfile(label);
