@@ -27,8 +27,11 @@ render(app, {
 router.get("/", async (ctx) => {
   console.log("HOST", ctx.host)
   const label = ctx.host.split(".")[0];
-  console.log(label);
-  const user_profile = await getProfile(label);
+  
+  let user_profile = await getProfile(label);
+  if (!user_profile?.currentLabel) {
+    user_profile = await getProfile("genesis")
+  }
 
   return ctx.render("index", {
     profile: user_profile,
