@@ -1,0 +1,22 @@
+{
+  "name": "ans-space",
+  "version": "0.0.1",
+  "description": "identity card for ANS labels",
+  "main": "./server/index.js",
+  "scripts": {
+    "start": "node ./server/index.js"
+  },
+  "keywords": [
+    "ANS",
+    "web3",
+    "identity"
+  ],
+  "author": "charmful0x",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "koa": "^2.13.4",
+    "koa-ejs": "^4.3.0",
+    "koa-router": "^10.1.1"
+  }
+}
