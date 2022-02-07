@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>ANS | <%= profile.currentLabel %>.ar</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+      integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l"
+      crossorigin="anonymous"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,viewport-fit=cover"
+    />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <title>ANS Identity</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4"><%= profile.currentLabel %>.ar</h1>
+        <p class="lead">
+          the web3 identity of
+          <a href="https://viewblock.io/arweave/address/<%- profile.user -%>"
+            ><%= profile.user %></a
+          >
+        </p>
+      </div>
+
+      <div class="list-group">
+        <div class="list-group-item">
+          <p class="mb-1">
+            <strong>nickname:</strong>
+            <%= profile.nickname %>
+          </p>
+          <p class="mb-1">
+            <strong>Bio:</strong>
+            <%= profile.bio %>
+          </p>
+          <% if (Object.keys(profile.links).length > 1) {%>
+          <p class="mb-1">
+            <strong>social: </strong>
+            <%if (profile.links.github) { %>
+            <a href="https://github.com/<%- profile.links.github %>"
+              ><i class="bi bi-github"></i
+            ></a>
+            <% }; %> <%if (profile.links.twitter) { %>
+            <a href="https://twitter.com/<%- profile.links.twitter %>"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <% }; %> <%if (profile.links.instagram) { %>
+            <a href="https://instagram.com/<%- profile.links.instagram %>"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <% }; %> <%if (profile.links.customUrl) { %>
+            <a href="<%- profile.links.customUrl %>"
+              ><i class="bi bi-link"></i
+            ></a>
+            <% }; %>
+          </p>
+          <% }; %>
+        </div>
+      </div>
+      <!-- Twitter Widget Start -->
+      <div class="list-group" style="float: right">
+        <%if (profile?.links?.twitter) { %>
+        <a
+          class="twitter-timeline"
+          data-width="350"
+          data-height="720"
+          href="https://twitter.com/<%- profile.links.twitter %>?ref_src=twsrc%5Etfw"
+          style="float: right"
+        ></a>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+        <% } %>
+      </div>
+      <!-- Twitter Widget Fin -->
+    </div>
+  </body>
+</html>
