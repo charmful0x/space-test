@@ -1,6 +1,7 @@
 {
   "name": "ans-space",
   "version": "0.0.1",
+  "type": "module",
   "description": "identity card for ANS labels",
   "main": "./server/index.js",
   "scripts": {
